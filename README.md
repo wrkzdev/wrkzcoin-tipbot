@@ -1,2 +1,3 @@
 # wrkzcoin-tipbot
-WrkzCoin tipbot for discord server
+* WrkzCoin tipbot for discord server
+` will upload code later`
