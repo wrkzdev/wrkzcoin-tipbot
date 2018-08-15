@@ -18,10 +18,10 @@ bot_help_info = "Get your account's info."
 bot_help_withdraw = f"Withdraw {WRKZCOIN_REPR} from your balance."
 bot_help_balance = f"Check your {WRKZCOIN_REPR} balance."
 bot_help_tip = f"Give {WRKZCOIN_REPR} to a user from your balance."
-bot_help_height = f"Get {WRKZCOIN_REPR} current block height."
-bot_help_nethash = f"Get {WRKZCOIN_REPR} network hashrate."
-bot_help_diff = f"Get {WRKZCOIN_REPR} current difficulty."
-bot_help_supply = f"Get {WRKZCOIN_REPR} circulating supply."
+bot_help_height = f"Show {WRKZCOIN_REPR} current block height."
+bot_help_nethash = f"Show {WRKZCOIN_REPR} network hashrate."
+bot_help_diff = f"Show {WRKZCOIN_REPR} current difficulty."
+bot_help_supply = f"Show {WRKZCOIN_REPR} circulating supply."
 
 bot = commands.Bot(command_prefix='.')
 
