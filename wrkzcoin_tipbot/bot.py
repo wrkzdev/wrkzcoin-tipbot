@@ -22,6 +22,7 @@ bot_help_height = f"Show {WRKZCOIN_REPR} current block height."
 bot_help_nethash = f"Show {WRKZCOIN_REPR} network hashrate."
 bot_help_diff = f"Show {WRKZCOIN_REPR} current difficulty."
 bot_help_supply = f"Show {WRKZCOIN_REPR} circulating supply."
+bot_help_stats = f"Show summary {WRKZCOIN_REPR}: height, difficulty, etc."
 
 bot = commands.Bot(command_prefix='.')
 
@@ -177,6 +178,17 @@ async def diff(context: commands.Context):
 async def supply(context: commands.Context):
     supply = daemonrpc_client.getsupply()
     await bot.reply(f'*[CIRCULATING SUPPLY]* `{supply}{WRKZCOIN_REPR}`\n')
+
+@bot.command(pass_context=True, help=bot_help_stats)
+async def stats(context: commands.Context):
+    supply = daemonrpc_client.getsupply()
+    difficulty = daemonrpc_client.getdiff()
+    hashrate = daemonrpc_client.gethashrate()
+    height = daemonrpc_client.getheight()
+    await bot.reply(f'\n*[NETWORK HEIGHT]* `{height}`\n'
+                    f'*[CIRCULATING SUPPLY]* `{supply}{WRKZCOIN_REPR}`\n'
+                    f'*[CURRENT DIFFICULTY]* `{difficulty}`\n'
+                    f'*[NETWORK HASH RATE]* `{hashrate}`\n')
 
 @register.error
 async def register_error(error, _: commands.Context):
