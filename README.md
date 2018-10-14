@@ -42,7 +42,7 @@ Based on original code: https://github.com/MarcDufresne/m0rkcoin-tip-bot
 * Run wrkz-service with existing wallet or new wallet and Wrkzd and note your defined ports.
 * Edit `config.yml`
 * Inside wrkztip-tipbot: `tox -r --notest`
-* Finally run tipbot: `/usr/local/bin/python3.6m /root/wrkzdev/wrkzcoin-tipbot/wrkzcoin_tipbot/bot.py`
+* Finally run tipbot: `/usr/local/bin/python3.6m /PATH/TO/wrkzcoin_tipbot/bot.py`
 * Last, create discord bot and invite it to your discord server.
 
 ## Usage
