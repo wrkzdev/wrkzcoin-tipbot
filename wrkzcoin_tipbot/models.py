@@ -29,6 +29,11 @@ class Tip(Document):
     date = DateTimeField(required=True)
     tx_hash = StringField()
 
+class TipAll(Document):
+    from_user = ReferenceField(User, required=True)
+    amount = LongField(required=True)
+    date = DateTimeField(required=True)
+    tx_hash = StringField()
 
 class Withdrawal(Document):
     user = ReferenceField(User, required=True)

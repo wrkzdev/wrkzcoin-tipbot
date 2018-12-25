@@ -24,6 +24,17 @@ def send_transaction(from_address: str, to_address: str, amount: int) -> str:
     result = rpc_client.call_method('sendTransaction', payload=payload)
     return result['transactionHash']
 
+def send_transactionall(from_address: str, to_address) -> str:
+    #print(to_address)
+    payload = {
+        'addresses': [from_address],
+        'transfers': to_address,
+        'fee': config.tx_fee,
+        'anonymity': 1
+    }
+    result = rpc_client.call_method('sendTransaction', payload=payload)
+    print(result)
+    return result['transactionHash']
 
 def get_wallet_balance(address: str) -> Dict[str, int]:
     result = rpc_client.call_method('getBalance', {'address': address})

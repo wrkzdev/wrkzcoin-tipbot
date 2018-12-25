@@ -42,6 +42,17 @@ def send_tip(user_from: models.User, user_to: models.User,
 
     return tip
 
+def send_tipall(user_from: models.User, user_tos,
+             amount: int) -> models.TipAll:
+    tip = models.TipAll(from_user=user_from, amount=amount,
+                     date=datetime.utcnow())
+
+    tx_hash = wallet.send_transactionall(user_from.balance_wallet_address,
+                                      user_tos)
+
+    tip.tx_hash = tx_hash
+    tip.save()
+    return tip
 
 def withdraw(user: models.User, amount: int) -> models.Withdrawal:
     withdrawal = models.Withdrawal(user=user, amount=amount,
